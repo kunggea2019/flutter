@@ -1,3 +1,4 @@
+import 'package:flist/page/Lists.dart';
 import 'package:flutter/material.dart';
 
 class Detail extends StatefulWidget {
@@ -55,10 +56,12 @@ class DetailState extends State<Detail> {
                     .showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
               // Show a red background as the item is swiped away.
-              background: Container(color: Colors.red),
+              background: Container(color: Colors.green),
               child: ListTile(
-                title: Text(item),
-              ),
+                  title: GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, Lists.routeName)},
+                child: Text(item),
+              )),
             );
           },
         ),

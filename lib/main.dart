@@ -1,4 +1,5 @@
 import 'package:flist/page/Detail.dart';
+import 'package:flist/page/Lists.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
         ExtractArgumentsScreen.routeName: (context) =>
             const ExtractArgumentsScreen(),
         Detail.routeName: (context) => const Detail(),
+        Lists.routeName: (context) => const Lists(),
       },
       // Provide a function to handle named routes.
       // Use this function to identify the named

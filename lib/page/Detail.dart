@@ -59,7 +59,11 @@ class DetailState extends State<Detail> {
               background: Container(color: Colors.green),
               child: ListTile(
                   title: GestureDetector(
-                onTap: () => {Navigator.pushNamed(context, Lists.routeName)},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('jump bitch')));
+                  Navigator.pushNamed(context, Lists.routeName);
+                },
                 child: Text(item),
               )),
             );

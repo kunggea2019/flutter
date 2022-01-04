@@ -1,5 +1,7 @@
 import 'package:flist/page/Detail.dart';
+import 'package:flist/page/DownloadButton.dart';
 import 'package:flist/page/Lists.dart';
+import 'package:flist/page/Twen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -15,6 +17,9 @@ class MyApp extends StatelessWidget {
             const ExtractArgumentsScreen(),
         Detail.routeName: (context) => const Detail(),
         Lists.routeName: (context) => const Lists(),
+        Twen.routeName: (context) => const Twen(),
+        ExampleCupertinoDownloadButton.routeName: (context) =>
+            const ExampleCupertinoDownloadButton(),
       },
       // Provide a function to handle named routes.
       // Use this function to identify the named
@@ -113,7 +118,17 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
                 onPressed: () =>
                     {Navigator.pushNamed(context, Detail.routeName)},
-                child: const Text('Detail GO'))
+                child: const Text('Detail GO')),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.pushNamed(
+                          context, ExampleCupertinoDownloadButton.routeName)
+                    },
+                child: const Text('Progress GO')),
+
+            ElevatedButton(
+                onPressed: () => {Navigator.pushNamed(context, Twen.routeName)},
+                child: const Text('Twen GO')),
           ],
         ),
       ),

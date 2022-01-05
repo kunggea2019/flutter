@@ -1,6 +1,7 @@
 import 'package:flist/page/Detail.dart';
 import 'package:flist/page/DownloadButton.dart';
 import 'package:flist/page/Lists.dart';
+import 'package:flist/page/StatePage.dart';
 import 'package:flist/page/Twen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
             const ExtractArgumentsScreen(),
         Detail.routeName: (context) => const Detail(),
         Lists.routeName: (context) => const Lists(),
+        StatePage.routeName: (context) => StatePage(),
         Twen.routeName: (context) => const Twen(),
         ExampleCupertinoDownloadButton.routeName: (context) =>
             const ExampleCupertinoDownloadButton(),
@@ -70,8 +72,8 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home Screen'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // A button that navigates to a named route.
             // The named route extracts the arguments
@@ -129,6 +131,10 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
                 onPressed: () => {Navigator.pushNamed(context, Twen.routeName)},
                 child: const Text('Twen GO')),
+            ElevatedButton(
+                onPressed: () =>
+                    {Navigator.pushNamed(context, StatePage.routeName)},
+                child: const Text('State GO')),
           ],
         ),
       ),
